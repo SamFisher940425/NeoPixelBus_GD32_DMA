@@ -1,0 +1,2 @@
+# NeoPixelBus_GD32_DMA
+适用于GD32的NeoPixelBus库，适用Timer+DMA输出PWM波形，驱动可编程LED
