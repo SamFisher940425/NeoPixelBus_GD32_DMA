@@ -16,7 +16,7 @@ LED文件夹存储类的实例化，LED初始化，基础灯效等函数
 
 # 使用方法
 
-将`NeoPixelBus`和`systick`两文件夹至于同级目录（因为头文件之间有相对路径包含关系）
+将`NeoPixelBus`和`systick`两文件夹至于同级目录（因为头文件之间有相对路径包含关系，推荐使用PlatformIO开发，文件结构兼容度更好）
 
 按需要配置Systick时钟，默认设置是生成1us的中断，并需要在中断中调用`Time_Accumulation()`函数累加us级计时结果变量
 
