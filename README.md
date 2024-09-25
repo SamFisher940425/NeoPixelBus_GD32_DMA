@@ -2,7 +2,7 @@
 
 NeoPixelBus是Arduino平台上著名的LED驱动库，可支持多种总线型LED和数码管等设备
 
-本项目将其移植到GD32平台上，基于SPL标准外设库开发，使用TIMER定时器PWM输出功能，配合DMA功能实现数据发送
+本项目将其移植到GD32平台上（目前支持E1、F1、F3系列，修改宏定义可支持更多型号），基于SPL标准外设库开发，使用TIMER定时器PWM输出功能，配合DMA功能实现数据发送
 
 # 目录结构
 
@@ -20,7 +20,7 @@ LED文件夹存储类的实例化，LED初始化，基础灯效等函数
 
 按需要配置Systick时钟，默认设置是生成1us的中断，并需要在中断中调用`Time_Accumulation()`函数累加us级计时结果变量
 
-按需要修改`NeoPixelBus\internal\methods\NeoArmMethod.h`中头文件引用
+按需要修改`NeoPixelBus\internal\methods\NeoArmMethod.h`中头文件引用（此文件是该库的接口核心，各种改造都可以从此处下手）
 
 按需要修改上述文件中`dma_pwm_init`和`dma_pwm_send`两函数的具体实现，注意要在外部初始化TIMER的PWM输出功能，此处只初始化了DMA
 
