@@ -111,7 +111,8 @@ public:
         while (!IsReadyToUpdate())
         {
             // yield(); // allows for system yield if needed
-            asm("nop;");
+            // asm("nop;");
+            return;
         }
         // Delay_ms(1); // force insert a reset command
 
